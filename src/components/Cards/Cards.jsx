@@ -26,7 +26,6 @@ function Cards({ city }) {
 function mapStateToProps(state) {
   return {
     city: state.city,
-    error: state.error
   }
 }
 
