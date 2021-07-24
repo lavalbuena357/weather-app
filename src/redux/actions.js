@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { API_KEY } from '../../env'
 export const GET_CITY = 'GET_CITY'
+export const UPDATE_CITIES = 'UPDATE_CITIES'
 
 export function getCity(city) {
   return async function(dispatch) {
@@ -12,4 +13,11 @@ export function getCity(city) {
       })
     } catch(err) {console.log(err)}
   }
+}
+
+export function updateCities(id) {
+  return  {
+    type: UPDATE_CITIES,
+    payload: id
+  }  
 }
