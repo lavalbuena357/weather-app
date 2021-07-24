@@ -3,12 +3,13 @@ import style from './Cards.module.css'
 import { connect } from 'react-redux'
 import Card from '../Card/Card'
 
-function Cards({ city, error }) {
+function Cards({ city }) {
   return (
     <div className={style.container}>
       {city.map((el, i) => 
         <Card 
           key={i}
+          id={el.id}
           name={el.name}
           country={el.sys.country}
           temp={el.main.temp}
