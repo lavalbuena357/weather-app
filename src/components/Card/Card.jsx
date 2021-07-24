@@ -1,13 +1,20 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import style from './Card.module.css'
 import { ImLocation2 } from 'react-icons/im';
 import { IoIosCloseCircle } from "react-icons/io";
+import { updateCities } from '../../redux/actions';
 
-function Card({ name, country, min, max, icon, temp, weather }) {
+function Card({ name, country, min, max, icon, temp, weather, id, updateCities }) {
+
+  function onClose() {
+    updateCities(id)
+  }
+
   return (
     <div className={style.container}>
       <div className={style.btn}>
-        <IoIosCloseCircle />
+        <IoIosCloseCircle onClick={onClose} />
       </div>
       <div className={style.head_ctn}>
         <ImLocation2 />
@@ -31,4 +38,10 @@ function Card({ name, country, min, max, icon, temp, weather }) {
   )
 }
 
-export default Card;
+function mapDispatchToProps(dispatch) {
+  return {
+    updateCities: (data) => dispatch(updateCities(data))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Card);
