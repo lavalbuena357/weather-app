@@ -34,9 +34,8 @@ function Main({ getCity }) {
     <div className={style.container}>
       <div className={style.search_ctn}>
         <form onSubmit={(e) => handleSearch(e)}>
-          <FaSearch />
-          <input type="search" placeholder='Search city...' id='search' onChange={(e) => handleChange(e)} />
-          <input type="submit" value='Search' />
+          <input type="search" placeholder='Search city...' id='search' className={style.search} onChange={(e) => handleChange(e)} />
+          <FaSearch onClick={(e) => handleSearch(e)} className={style.button} />
         </form>
       </div>
       <div className={style.content}>
