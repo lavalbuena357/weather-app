@@ -1,7 +1,8 @@
-import { GET_CITY, UPDATE_CITIES } from "./actions"
+import { GET_CITY, UPDATE_CITIES, CITY_DETAIL } from "./actions"
 
 const initialState = {
-  city: []
+  city: [],
+  detail: null
 }
 
 function reducer(state = initialState, action) {
@@ -14,6 +15,10 @@ function reducer(state = initialState, action) {
       let update = state.city.filter(el => el.id !== action.payload)
       return {...state,
         city: update
+      }
+    case CITY_DETAIL:
+      return {...state,
+        detail: action.payload
       }
     default:
       return state
