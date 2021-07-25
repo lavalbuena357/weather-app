@@ -13,6 +13,11 @@
   box-shadow: 3px 3px 2px #000;
 }
 
+.container a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .close {
   position: absolute;
   top: 0;
