@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  display: flex;
+  padding: 15px;
+  background-color: rgb(68, 68, 68);
+  box-shadow: 0 3px 3px #000;
+  box-sizing: border-box;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container h1 {
+  font-size: 3rem;
+  color: #fff;
+}
