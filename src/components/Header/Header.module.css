@@ -44,3 +44,21 @@
   padding: 5px;
   font-size: 2rem;
 }
+
+@media only screen and (max-width:830px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .title_ctn {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .subtitle {
+    font-size: .8rem;
+  }
+  .icons_ctn svg {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+}
