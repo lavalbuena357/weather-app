@@ -7,35 +7,36 @@ import Cards from '../Cards/Cards'
 
 function Main({ getCity }) {
   const [cities, setCities] = useState([])
-
-  let cityStr = '' 
-
-  function clear() {
-    let textInput = document.getElementById('search')
-    if(textInput !== null) {
-      textInput.value = ''
-    }
-  }
+  const [searchInput, setSearchInput] = useState('')
   
   function handleChange(e) {
-    cityStr = e.target.value.toLowerCase()
+    setSearchInput(e.target.value.toLowerCase())
   }
   
   function handleSearch(e) {
     e.preventDefault()
-    if(!cities.includes(cityStr)) {
-      setCities([...cities, cityStr])
-      getCity(cityStr)
+    if(!cities.includes(searchInput)) {
+      setCities([...cities, searchInput])
+      getCity(searchInput)
     }
-    clear()
+    setSearchInput('')
   }
 
   return (
     <div className={style.container}>
       <div className={style.search_ctn}>
         <form onSubmit={(e) => handleSearch(e)}>
-          <input type="search" placeholder='Search city...' id='search' className={style.search} onChange={(e) => handleChange(e)} />
-          <FaSearch onClick={(e) => handleSearch(e)} className={style.button} />
+          <input 
+            type="text" 
+            placeholder='Buscar por ciudad...' 
+            id='search' 
+            className={style.search} 
+            value={searchInput}
+            autoComplete='off'
+            onChange={(e) => handleChange(e)} />
+          <FaSearch 
+            onClick={(e) => handleSearch(e)} 
+            className={style.button} />
         </form>
       </div>
       <div className={style.content}>
