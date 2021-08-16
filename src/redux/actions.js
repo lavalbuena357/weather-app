@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { API_KEY } from '../../env'
+import api_key from '../../env'
 export const GET_CITY = 'GET_CITY'
 export const UPDATE_CITIES = 'UPDATE_CITIES'
 export const CITY_DETAIL = 'CITY_DETAIL'
@@ -7,7 +7,7 @@ export const CITY_DETAIL = 'CITY_DETAIL'
 export function getCity(city) {
   return async function(dispatch) {
     try {
-      const weather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
+      const weather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`)
       dispatch ({
         type: GET_CITY,
         payload: weather.data
@@ -26,7 +26,7 @@ export function updateCities(id) {
 export function cityDetail(id) {
   return async function(dispatch) {
     try {
-      const detail = await axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${API_KEY}&units=metric`)
+      const detail = await axios.get(`https://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${api_key}&units=metric`)
       dispatch({
         type: CITY_DETAIL,
         payload: detail.data
