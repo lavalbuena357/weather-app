@@ -14,7 +14,7 @@ function Header() {
       <div className={style.wrapper}>
         <div className={style.title_ctn}>
           <h1>Al<span>Clima</span></h1>
-          <span className={style.subtitle}>Consulta información de clima de cualquier país.</span>
+          <span className={style.subtitle}>Consulta información del clima de cualquier país.</span>
         </div>
         <div className={style.icons_ctn}>
           <TiWeatherCloudy/>
