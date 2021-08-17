@@ -18,12 +18,16 @@
   text-decoration: none;
 }
 
+.btn {
+  margin-bottom: 5px;
+}
+
 .close {
   position: absolute;
   top: 0;
   right: 0;
   color: rgba(255, 255, 255, 0.604);
-  font-size: 2rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -31,23 +35,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
 }
 
 .head_ctn .location {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .head_ctn h2 {
   margin: 0 5px;
-  font-size: 1.2em;
+  font-size: .8em;
 }
 
 .head_ctn h3 {
   position: absolute;
   top: 2px;
   left: 10px;
-  font-size: 1.2em;
+  font-size: 1em;
   color: rgb(187, 255, 0);
 }
 
@@ -59,7 +62,7 @@
 
 .temp h2 {
   font-weight: 400;
-  font-size: 5.5em;
+  font-size: 2em;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -69,6 +72,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  font-size: .8em;
+  font-size: .6em;
   margin-left: 20px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+}
+
+.icon img {
+  width: 60%;
 }
