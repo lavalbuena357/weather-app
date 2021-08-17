@@ -10,6 +10,16 @@ function Detail({ detail, setIdCity }) {
     setIdCity(false)
   }
 
+  function realTime(time) {
+    const zone = (time/60)/60
+    let hour = (new Date().getHours())+zone
+    if(hour < 0) hour = 24 + hour
+    if(hour + 5 > 24) hour = hour -24
+    const minutes = new Date().getMinutes()
+    const realTime = `${hour+5} : ${minutes}`
+    return realTime
+  }
+
   const img = detail && detail.weather[0].icon
 
   return (
@@ -24,6 +34,7 @@ function Detail({ detail, setIdCity }) {
             <h2>{detail && detail.sys.country}</h2>
             <h1>{detail && detail.name}</h1>
             <h3>{detail && parseInt(detail.main.temp)}°</h3>
+            <span>Time: {detail && realTime(detail.timezone)}</span>
             <p>Min: {detail && detail.main.temp_min}°</p>
             <p>Max: {detail && detail.main.temp_max}°</p>
             <span>Longitude: {detail && detail.coord.lon} || </span>
