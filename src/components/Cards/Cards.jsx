@@ -3,10 +3,14 @@ import style from './Cards.module.css'
 import { connect } from 'react-redux'
 import Card from '../Card/Card'
 
-function Cards({ city }) {
+function Cards({ city, handleDetails }) {
+
+  const otherCities = city.filter((el, i) => i < city.length-1)
+  otherCities.reverse()
+  
   return (
     <div className={style.container}>
-      {city.map((el, i) => 
+      {otherCities.map((el, i) => 
         <Card 
           key={i}
           id={el.id}
@@ -17,6 +21,7 @@ function Cards({ city }) {
           max={el.main.temp_max}
           icon={el.weather[0].icon}
           weather={el.weather[0].main}
+          handleDetails={handleDetails}
         />
       )}
     </div>
