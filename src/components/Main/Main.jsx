@@ -56,7 +56,7 @@ function Main({ getCity, cityDetail, city }) {
                 className={style.button} />
             </form>
           </div>
-          <BiCurrentLocation className={style.location}/>
+          <BiCurrentLocation onClick={(e) => handleSearch(e)} className={style.location}/>
         </div>
         <div className={style.other}>
 

@@ -36,6 +36,7 @@
   background-color: #21333e;
   padding: 10px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .searchWrapper {
