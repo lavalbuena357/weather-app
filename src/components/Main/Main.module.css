@@ -1,7 +1,44 @@
 .container {
+  display: flex;
   padding: 15px;
+  position: relative;
 }
+
+.detail_ctn {
+  position: absolute;
+  z-index: 100;
+  left: 10%;
+  right: 10%;
+  top: 0;
+}
+
+.detail_ctn::before {
+  content: '';
+  position: absolute;
+  right: -100%;
+  top: -100%;
+  bottom: -10%;
+  left: -100%;
+}
+
+.aside {
+  min-width: 280px;
+  max-width: 400px;
+}
+
 .search_ctn {
+  display: flex;
+  align-items: center;
+}
+
+.location {
+  color: #00ffff;
+  background-color: #21333e;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.searchWrapper {
   background-color: #21333e;
   border: 1px solid #ffffff;
   color: white;
@@ -11,7 +48,7 @@
   border-radius: 25px;
 }
 
-.search_ctn:hover {
+.searchWrapper:hover {
   border: 1px solid #00ffff;
   color: #00ffff;
 }
@@ -28,4 +65,16 @@
 
 .button {
   cursor: pointer;
+}
+
+.cards_ctn {
+  display: flex;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width:728px) {
+  .detail_ctn {
+    left: 1%;
+    right: 1%;
+  }
 }
