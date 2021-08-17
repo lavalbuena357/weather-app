@@ -12,12 +12,7 @@ function Detail({ detail, setIdCity }) {
 
   function realTime(time) {
     const zone = (time/60)/60
-    let hour = (new Date().getHours())+zone
-    if(hour < 0) hour = 24 + hour
-    if(hour + 5 > 24) hour = hour -24
-    const minutes = new Date().getMinutes()
-    const realTime = `${hour+5} : ${minutes}`
-    return realTime
+    return `GMT:${zone}`
   }
 
   const img = detail && detail.weather[0].icon
